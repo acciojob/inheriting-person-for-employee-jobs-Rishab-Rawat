@@ -8,9 +8,10 @@ class Person {
     console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
   }
 }
+
 class Employee extends Person {
   constructor(name, age, jobTitle) {
-    super(name, age);  // Call the parent class constructor with `name` and `age`
+    super(name, age);
     this.jobTitle = jobTitle;
   }
 
@@ -18,10 +19,7 @@ class Employee extends Person {
     console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
   }
 }
-// Create an instance of Person
-const alice = new Person("Alice", 25);
-alice.greet();  // Output: Hello, my name is Alice, I am 25 years old.
 
-// Create an instance of Employee
-const bob = new Employee("Bob", 30, "Manager");
-bob.jobGreet(); 
+// Ensure these classes are available on the window object
+window.Person = Person;
+window.Employee = Employee;
